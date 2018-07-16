@@ -155,6 +155,7 @@ void run_do_op(struct horde_node *h)
 	} break;
 	case ZOMBIE:
 	{
+		//TODO: implement zombie
 	} break;
 	case SOURCE:
 	{

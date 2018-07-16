@@ -17,9 +17,11 @@
 NUMBER      [0-9]+
 IDENT	    [a-z|A-Z][a-z|A-Z|0-9|_]*
 WS          [ \r\n\t]*
+COMMENT	    "//".*
  
 %%
  
+{COMMENT}	{ /* Skip comment. */}
 {WS}            { /* Skip blanks. */ }
 {NUMBER}        { yylval.value = atoi(yytext); return CONSTANT; }
 "+"		{return ADD;}
