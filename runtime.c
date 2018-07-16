@@ -78,11 +78,14 @@ void run_prop_life(struct horde_node *h)
 	if(h->previous != NULL)
 	{
 		h->previous->next = h->next;
-		h->next->previous = h->previous;
+		//If we're not last datum
+		if(h->next != NULL)
+			h->next->previous = h->previous;
 	}
 	else
 	{
-		h->next->previous = h->previous;
+		if(h->next != NULL)
+			h->next->previous = h->previous;
 		horde = h->next;
 	}
 	free(h);
@@ -167,5 +170,24 @@ void run_do_op(struct horde_node *h)
 //updates life and death and evaluates
 int run_horde()
 {
-	
+	struct horde_node *h;
+	char c;
+
+	while(horde != NULL)
+	{
+		h = horde;	
+		run_prop_life(h);
+		h = h->next;
+
+		if(h == NULL)
+			h = horde;
+
+		scanf("%c",&c);
+	}
 }
+
+
+
+
+
+

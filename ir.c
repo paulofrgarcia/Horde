@@ -72,6 +72,7 @@ void ir_gen_ir()
 		{
 			i->state = ALIVE;
 			i->l_value = a->constant;
+			i->operation = SOURCE;
 		}
 		else
 		{

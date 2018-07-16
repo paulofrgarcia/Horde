@@ -1,4 +1,5 @@
 #include"lin_ast.h"
+#include"parser.tab.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -10,6 +11,7 @@ void lin_print_last(struct lin_ast_node *l)
 {
 	if(l != NULL)
 	{
+		printf("%d\t",l->operator);
 		if(l->type == LIN_AST_TERM)
 		{
 			printf("%s",l->name);
@@ -78,6 +80,8 @@ char *lin_new_const(char *n, int c)
 	l->constant = c;
 	l->identifier = NULL;
 
+	l->operator = SOURCE;
+
 	l->IR_done = 0;
 
 	l->next = l_ast;
@@ -109,6 +113,8 @@ char *lin_new_ident(char *n, char *i)
 
 	l->constant = 0;
 	l->identifier = i;
+
+	l->operator = SOURCE;
 
 	l->IR_done = 0;
 
@@ -145,6 +151,8 @@ char *lin_new_sexp(char *n, int o, char *left, char *right)
 
 	l->ls_exp = left;
 	l->rs_exp = right;
+
+	l->operator = o;
 
 	l->IR_done = 0;
 

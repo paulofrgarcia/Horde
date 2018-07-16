@@ -45,5 +45,8 @@ int main(int argc, char *argv[])
 
 	//Initialize runtime
 	run_init_runtime(ir);
+
+	//Let's run the program
+	run_horde();
 	return 0;
 }
