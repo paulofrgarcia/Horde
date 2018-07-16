@@ -1,0 +1,16 @@
+a = (1);
+b = (2);
+
+x = (* (a) (b));
+
+isone = (== (a) (1));
+
+true = (if (isone) (2));
+
+y = (life (x) (true));
+
+zed = (true);
+
+arg = (3);
+
+fact = (* (arg) (life (if (== (arg) (1)) (1)) (zombie (fact) (- (arg) (1)))));
