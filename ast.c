@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include "symtable.h"
 
 
 struct ast_node *new_ast_datum(char *n, struct ast_node *a, struct ast_node *next)

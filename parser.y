@@ -8,6 +8,8 @@
 #include "ast.h"
 #include "symtable.h"
 
+int yylex (void);
+
 int yyerror() {
     printf("Syntax error\n");
 }

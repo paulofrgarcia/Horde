@@ -222,7 +222,7 @@ char *lin_gen_last(struct ast_node *a)
 		default:
 		{
 			printf("Error: unknown AST type.\n");
-			return;
+			return NULL;
 		}		
 		}		
 	}

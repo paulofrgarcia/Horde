@@ -3,6 +3,7 @@
 #include "ast.h"
 #include"ir.h"
 #include"lin_ast.h"
+#include "runtime.h"
 
 extern FILE *yyin;
 
